@@ -28,13 +28,13 @@ At project time, we give them:
 At project submission, we expect more tests/assertions, and 0 skips
 
  -->
-
+<!--
 | Criteria | yes/no, and optionally any details/lines of code to reference |
 | --- | --- |
 | There are tests around the `User` model for validations, relationships, and custom methods (such as `build_from_github`) | ✔️?
 | There are tests for `UsersController#login` and `UsersController#logout` that use OAuth mocks | ✔️?
 | There are tests for `WorksController#upvote` that use OAuth mocks. There are separate tests for logged-in users and guest users. | ✔️?
-
+-->
 ## Functional Requirements
 
 | Functional Requirement | yes/no |
