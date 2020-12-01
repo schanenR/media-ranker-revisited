@@ -12,6 +12,22 @@ class UsersController < ApplicationController
   def login_form
   end
 
+  def create
+    auth_hash = request.env["omniauth.auth"]
+    user = User.find_by(uid: auth_hash)
+    if user
+      flash[:success] = "Logged in as returning user #{user.username}"
+      if user.save
+        flash[:success] = "Logged in as returning user#{user.username}"
+      else
+        flash[:error] = "Could NOT create new user account"
+        return redirect_to root_path
+      end
+    end
+    session[:user_id] = user.id
+    redirect_to root_path
+  end
+
   def login
     username = params[:username]
     if username and user = User.find_by(username: username)
