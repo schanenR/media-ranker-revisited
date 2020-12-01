@@ -51,10 +51,11 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def logout
+  def delete
     session[:user_id] = nil
-    flash[:status] = :success
-    flash[:result_text] = "Successfully logged out"
+    flash[:success] = "Successfully logged out!"
+
     redirect_to root_path
   end
+
 end

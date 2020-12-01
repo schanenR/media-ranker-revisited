@@ -12,4 +12,5 @@ class User < ApplicationRecord
     user.username = auth_hash["info"]["name"] || auth_hash["info"]["nickname"]
     return user
   end
+
 end
