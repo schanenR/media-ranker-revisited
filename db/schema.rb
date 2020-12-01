@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 2020_12_01_080543) do
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "uid"
+    t.string "provider"
+    t.string "name"
   end
 
   create_table "votes", force: :cascade do |t|
